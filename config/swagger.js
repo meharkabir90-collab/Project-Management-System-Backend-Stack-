@@ -12,6 +12,10 @@ const options = {
             {
             url: "http://localhost:5000",
             },
+            {
+              url: "https://project-management-system-backend-stack-production.up.railway.app/",
+              description: "Production",
+            }
             
             
         ],
