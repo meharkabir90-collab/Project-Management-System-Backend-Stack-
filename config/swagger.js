@@ -220,7 +220,7 @@ Task: {
 }
 
     },
-    apis: ["./Routes/*.js"]
+    apis: ["./routes/*.js"]
 
 
 
