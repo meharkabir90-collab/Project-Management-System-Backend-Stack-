@@ -24,7 +24,7 @@ dbConnect();
 const cors = require('cors');
 app.use(cors({
   origin: [ 'http://localhost:5173',
-  'https://project-management-system-stack.vercel.app/'
+      'https://project-management-system-stack-vert.vercel.app'
   ],
   credentials: true,
 
