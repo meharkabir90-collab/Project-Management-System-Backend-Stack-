@@ -26,7 +26,7 @@ const register = async (userData) => {
     }
 
     const { username, name, email, password } = userData;
-
+console.log("Login email:", email);
     // 1. Check existing user
     const existingUser = await User.findOne({ email });
 
@@ -109,7 +109,7 @@ const login = async ({ email, password }) => {
         },
         process.env.JWT_SECRET,
         {
-            expiresIn: "10d"
+            expiresIn: "30d"
         }
     );
 

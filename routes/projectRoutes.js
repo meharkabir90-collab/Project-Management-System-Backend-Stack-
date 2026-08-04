@@ -33,7 +33,7 @@ const {
  *       401:
  *         description: Unauthorized
  */
-router.post("/createProject", authMiddleware, roleMiddleware("admin"), createProject);
+router.post("/create", authMiddleware, roleMiddleware("admin"), createProject);
 
 /**
  * @swagger
@@ -49,7 +49,7 @@ router.post("/createProject", authMiddleware, roleMiddleware("admin"), createPro
  *       401:
  *         description: Unauthorized
  */
-router.get("/", authMiddleware, roleMiddleware("admin", "member"), getAllProjects);
+router.get("/", authMiddleware, roleMiddleware("admin", "manager", "member"), getAllProjects);
 
 /**
  * @swagger
@@ -72,7 +72,7 @@ router.get("/", authMiddleware, roleMiddleware("admin", "member"), getAllProject
  *       404:
  *         description: Project not found
  */
-router.get("/:id",  authMiddleware, roleMiddleware("admin", "member"), getProjectById);
+router.get("/:id",  authMiddleware, roleMiddleware("admin", "manager", "member"), getProjectById);
 
 /**
  * @swagger

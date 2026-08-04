@@ -6,13 +6,15 @@ const Task = require('../models/Task');
 
 const getDashboard = async (userId) => {
 
-    const totalWorkspaces = await Workspace.countDocuments();
+    const totalUsers = await User.countDocuments();
     const totalAdmins = await User.countDocuments({
         role: "admin"});
     const totalManagers = await User.countDocuments({
         role: "manager"});
     const totalMembers = await User.countDocuments({
         role: "member"});
+
+    const totalWorkspaces = await Workspace.countDocuments();
 
 
     const totalProjects = await Project.countDocuments();
@@ -39,13 +41,15 @@ const getDashboard = async (userId) => {
         status: "done"
     });
 
+     
+
 
 
     return {
-    totalWorkspaces,
+    totalUsers,
     totalAdmins,
     totalManagers,
-    totalMembers, totalProjects, activeProjects, completedProjects, archivedProjects,
+    totalMembers, totalWorkspaces, totalProjects, activeProjects, completedProjects, archivedProjects,
         totalTasks, todoTasks, inprogressTasks ,reviewTasks, completedTasks
 
     };

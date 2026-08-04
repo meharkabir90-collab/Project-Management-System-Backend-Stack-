@@ -53,12 +53,7 @@ const { getDashboard } = require("../controllers/dashboardController");
  *       500:
  *         description: Internal Server Error
  */
-router.get(
-    "/",
-    authMiddleware,
-    roleMiddleware("admin", "manager"),
-    getDashboard
-);
+
 router.get("/",  authMiddleware, roleMiddleware("admin", "manager", "member"), getDashboard);
 
 module.exports = router;

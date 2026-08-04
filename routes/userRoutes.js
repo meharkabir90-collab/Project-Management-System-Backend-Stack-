@@ -11,7 +11,7 @@ const {
 } = require('../controllers/userController');
 
 
-router.get("/", authMiddleware, roleMiddleware("admin"), getAllUsers);
+router.get("/", authMiddleware, roleMiddleware("admin", "manager"), getAllUsers);
 
 router.get("/:id", authMiddleware, roleMiddleware("admin", "manager"), getUserById);
 
