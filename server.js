@@ -24,7 +24,7 @@ dbConnect();
 const cors = require('cors');
 app.use(cors({
   origin: [ 'http://localhost:5173',
-  'https://project-management-syste-git-cdffc3-muhammad-kabeer-s-projects1.vercel.app'
+  'https://project-management-system-stack.vercel.app/'
   ],
   credentials: true,
 
